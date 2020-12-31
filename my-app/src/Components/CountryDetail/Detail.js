@@ -24,10 +24,11 @@ const Detail = () => {
 
         
     return Country.map((
-        {capital,name,population,flag,nativeName,subregion,region}) =>
+        {capital,name,population,flag,nativeName,subregion,region,alpha2Code}) =>
           <div key={name} className="country" style={countryStyle}>
               <h3>{name}</h3>
               <img src={flag} alt="" style={{height:"10rem"}}/>
+              <div>Code: {alpha2Code}</div>
               <div>Capital: {capital}</div>
               <div>Region: {region}</div>
               <div>Population: {population}</div>
