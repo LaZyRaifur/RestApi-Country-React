@@ -9,6 +9,7 @@ import Country from './Components/Country/Country';
 import { useEffect, useState } from 'react';
 import Home from './Components/Home/Home';
 import NotFound from './Components/NotFound/NotFound';
+import Detail from './Components/CountryDetail/Detail';
 
 
 function App() {
@@ -24,7 +25,9 @@ function App() {
         <Route path="/home">
           <Home></Home>
         </Route>
-       
+        <Route path="/:countryName">
+          <Detail></Detail>
+        </Route>
         <Route exact path="/">
           <Home />
         </Route>

@@ -1,8 +1,14 @@
 import React from 'react';
+import { Link, useHistory } from 'react-router-dom';
 
 const Country = (props) => {
-    const{name,capital,population,nativeName,area
-        } = props.country;
+    const{name,flag} = props.country;
+    const history = useHistory();
+
+    const handleClick = (countryName) =>{
+        const url = `${countryName}`;
+        history.push(url);
+    }
     const style = {
         border: '1px solid purple',
         margin: '20px',
@@ -11,12 +17,14 @@ const Country = (props) => {
     }
     return (
         <div style={style}>
-            <h4>Country name: {name}</h4>
-            <p>Capital: {capital}</p>
-            <p><small>Population: {population}</small></p>
-            <p><small>Native name: {nativeName}</small></p>
-         
-            <p><small>Area : {area}</small></p>
+            
+            
+            <h2>{name}</h2>
+            <img src={flag} style={{height:"10rem"}}alt=""/>
+            <br/>
+            <Link to={`/${name}`}>Show detail</Link>
+            <br/>
+            <button onClick={() => handleClick(name)}>Click me</button>
                       
             
         </div>

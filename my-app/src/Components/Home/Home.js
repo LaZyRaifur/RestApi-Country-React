@@ -9,9 +9,10 @@ const Home = () => {
         .then(res=>res.json())
         .then(data=>setCountry(data))
     },[])
+    
     return (
         <div>
-            <h2>Total country:{country.length}</h2>
+            <h2 style={{margin:'20px',padding:'20px'}}>Total country:{country.length}</h2>
             {
                 country.map(country =><Country country={country}></Country>)
             }
